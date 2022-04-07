@@ -6,16 +6,16 @@ import 'constant.dart';
 class ConstantPreview extends StatelessWidget {
 
   final List colorName = [
-  'BackgroundColor',
-  'TitleTextColor',
-  'BodyTextColor',
-  'TextLightColor',
-  'InfectedColor',
-  'DeathColor',
-  'Recovercolor',
-  'PrimaryColor',
-  'ShadowColor',
-  'ActiveShadowColor',
+  BackgroundColor,
+  TitleTextColor,
+  BodyTextColor,
+  TextLightColor,
+  InfectedColor,
+  DeathColor,
+  Recovercolor,
+  PrimaryColor,
+  ShadowColor,
+  ActiveShadowColor,
   ];
 
   ConstantPreview({Key? key}) : super(key: key);
@@ -41,7 +41,7 @@ class ConstantPreview extends StatelessWidget {
                 height: 100,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    color: Colors.red,
+                    color: colorName[index],
                     boxShadow: [
                       BoxShadow(
                         offset: Offset(0,5),
@@ -52,7 +52,7 @@ class ConstantPreview extends StatelessWidget {
                 ),
               ),
               SizedBox(width: 20,),
-              Text(colorName[index], style: TitleTextstyle,)
+              Text('$colorName', style: TitleTextstyle,)
             ],
           ),
         );

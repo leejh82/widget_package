@@ -48,15 +48,16 @@ class MyHomePage extends StatelessWidget {
                 height: 60,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.blue
+                    color: Colors.blue),
+                child: Text(
+                  'List Viwe',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
-                child: Text('List Viwe', style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white
-                ),),
               ),
             ),
-            SizedBox(height: 50,),
+            SizedBox(
+              height: 50,
+            ),
             GestureDetector(
               onTap: () {
                 Navigator.of(context).push(
@@ -68,12 +69,11 @@ class MyHomePage extends StatelessWidget {
                 height: 60,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.blue
+                    color: Colors.blue),
+                child: Text(
+                  'Constant Preview',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
-                child: Text('Constant Preview', style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white
-                ),),
               ),
             ),
           ],
