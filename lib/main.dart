@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widget_package/constant_widget/constant_preview.dart';
 
 import 'list_view_widget/list_view.dart';
 
@@ -54,7 +55,27 @@ class MyHomePage extends StatelessWidget {
                     color: Colors.white
                 ),),
               ),
-            )
+            ),
+            SizedBox(height: 50,),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => ConstantPreview()));
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: 200,
+                height: 60,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.blue
+                ),
+                child: Text('Constant Preview', style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white
+                ),),
+              ),
+            ),
           ],
         ),
       ),
