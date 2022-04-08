@@ -51,7 +51,7 @@ class ConstantPreview extends StatelessWidget {
             margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             width: double.maxFinite,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(8),
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
@@ -63,17 +63,17 @@ class ConstantPreview extends StatelessWidget {
             child: Row(
               children: [
                 Container(
-                  width: 180,
+                  width: 170,
                   height: 80,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        bottomLeft: Radius.circular(15)),
+                        topLeft: Radius.circular(8),
+                        bottomLeft: Radius.circular(8)),
                     color: colorData[index].color,
                   ),
                 ),
                 SizedBox(
-                  width: 20,
+                  width: 10,
                 ),
                 Text(
                   colorData[index].name,

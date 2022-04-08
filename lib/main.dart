@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widget_package/constant_widget/constant_preview.dart';
 
+import 'card_widget/card_page.dart';
 import 'list_view_widget/list_view.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: CardWidgetPage(),
     );
   }
 }
@@ -72,6 +73,27 @@ class MyHomePage extends StatelessWidget {
                     color: Colors.blue),
                 child: Text(
                   'Constant Preview',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => CardWidgetPage()));
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: 200,
+                height: 60,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.blue),
+                child: Text(
+                  'Card Widget Page',
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
