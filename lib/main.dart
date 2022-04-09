@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widget_package/constant_widget/constant_preview.dart';
+import 'package:widget_package/list_view_widget_2/list_view_popup.dart';
 
 import 'card_widget/card_page.dart';
 import 'list_view_widget/list_view.dart';
@@ -52,6 +53,27 @@ class MyHomePage extends StatelessWidget {
                     color: Colors.blue),
                 child: Text(
                   'List Viwe',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => ListViewPopup()));
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: 200,
+                height: 60,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.blue),
+                child: Text(
+                  'List Viwe Pop-Up',
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
