@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'my_card.dart';
+
 class CardWidgetPage extends StatelessWidget {
   const CardWidgetPage({Key? key}) : super(key: key);
 
@@ -44,64 +46,24 @@ class CardWidgetPage extends StatelessWidget {
               ),
             ),
             Container(
-              width: 300,
-              padding: EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                color: Colors.purple[300],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'Card Name',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    '\$ 1,234,567',
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Card Info',
-                        style: TextStyle(
+              width: double.maxFinite,
+              height: 150,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.only(left: 20,),
 
-                          color: Colors.white,
-                        ),
-                      ),
-                      Text(
-                        '12/26',
-                        style: TextStyle(
+              children: [
+                MyCard(CardName: 'CardName 01', CardColor: Colors.purple[200],CardPrise: '1,234,567',CardDay: '12/08',CardNumber: '***-333-555-666',),
+                MyCard(CardName: 'CardName 02', CardColor: Colors.redAccent[200],CardPrise: '1,234,567',CardDay: '12/08',CardNumber: '***-333-555-666',),
+                MyCard(CardName: 'CardName 03', CardColor: Colors.yellow[200],CardPrise: '1,234,567',CardDay: '12/08',CardNumber: '***-333-555-666',),
 
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            )
-          ],
+              ],
+            ),)
+            ],
         ),
       ),
     );
   }
 }
+
+
