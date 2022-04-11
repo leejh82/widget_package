@@ -1,9 +1,11 @@
+import 'dart:html';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'constant.dart';
 
-class ConstantPreview extends StatelessWidget {
+class ConstantPreview extends StatefulWidget {
   static List<String> colorName = [
     'BackgroundColor',
     'TitleTextColor',
@@ -29,14 +31,23 @@ class ConstantPreview extends StatelessWidget {
     Color(0xFF4056C6).withOpacity(.15),
   ];
 
-  final List<ColorName> colorData = List.generate(
-      colorName.length,
-      (index) => ColorName(
-            colorName[index],
-            colorCode[index],
-          ));
 
   ConstantPreview({Key? key}) : super(key: key);
+
+  @override
+  State<ConstantPreview> createState() => _ConstantPreviewState();
+}
+
+class _ConstantPreviewState extends State<ConstantPreview> {
+
+  bool _isFavorited = true;
+
+  final List<ColorName> colorData = List.generate(
+      ConstantPreview.colorName.length,
+      (index) => ColorName(
+            ConstantPreview.colorName[index],
+            ConstantPreview.colorCode[index],
+          ));
 
   @override
   Widget build(BuildContext context) {
@@ -45,25 +56,26 @@ class ConstantPreview extends StatelessWidget {
         title: Text('Constant Preview Widget'),
       ),
       body: ListView.builder(
-        itemCount: colorName.length,
+        itemCount: ConstantPreview.colorName.length,
         itemBuilder: (context, index) {
           return Container(
-            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
             width: double.maxFinite,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0, 5),
-                    blurRadius: 10,
+                    offset: Offset(0, 2),
+                    blurRadius: 2,
                     color: ShadowColor,
                   )
                 ]),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  width: 170,
+                  width: 150,
                   height: 80,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -72,13 +84,27 @@ class ConstantPreview extends StatelessWidget {
                     color: colorData[index].color,
                   ),
                 ),
-                SizedBox(
-                  width: 10,
-                ),
+
                 Text(
                   colorData[index].name,
                   style: TitleTextstyle,
-                )
+                ),
+                IconButton(
+                  onPressed: (){
+                    setState(() {
+                      if (_isFavorited) {
+                        _isFavorited = false;
+                      } else {
+                        _isFavorited = true;
+                      }
+                    });
+
+                  },
+                  icon: (_isFavorited
+                  ? Icon(Icons.favorite, color: Colors.red,)
+                  : Icon(Icons.favorite_border,color: Colors.grey,)
+                  )
+                ),
               ],
             ),
           );
